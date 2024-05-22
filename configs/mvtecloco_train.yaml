@@ -1,0 +1,42 @@
+Datasets:
+  train:
+    root: datasets/mvtec_loco_anomaly_detection/
+    type: mvtec_loco
+    aug_config:
+      lsa:
+        min_distance: 0.2
+        max_aug_num: 1
+        min_aug_num: 1
+        boundary: 0.1
+        weight_power: 0.0
+      ssa:
+        num_points: 3
+        max_translation: 15
+        max_aug_num: 2
+        min_aug_num: 1
+  eval:
+    root: datasets/mvtec_loco_anomaly_detection/
+    type: mvtec_loco
+
+output_dir: output
+
+Model:
+  checkpoints: ckpt/teacher_medium.pth
+  model_size: M
+  channel_size: 512
+  input_size: 256
+  iterations: 40000
+  loss_weights:
+    st: 1.0
+    ae: 1.0
+    stae: 1.0
+  padding: True
+  batch_size: 2
+
+  
+eval_freq: 500
+normalized_ratio: 0.1
+combined_mst_ratio: 0.5
+combined_mae_ratio: 0.5
+#seed: 42
+ckpt_dir: ckpt
