@@ -18,3 +18,5 @@ other dependencies
 
 replace the DATASET_PATH and CATEGORY with your config
 
+# Acknowledgement
+We use the code from [SAM-HQ](https://github.com/SysCV/sam-hq), [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) and [SAM](https://github.com/facebookresearch/segment-anything/tree/main)
