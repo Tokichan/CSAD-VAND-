@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 # segment anything
 from segment_anything import (
     sam_model_registry,
-    sam_hq_model_registry,
     SamPredictor,
     SamAutomaticMaskGenerator
 )
+from build_sam_hq import sam_hq_model_registry
 # Grounding DINO
 from grounded_sam import (
     load_image,
